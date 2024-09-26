@@ -39,8 +39,7 @@ Le projet est divisé en plusieurs parties :
 
 ### Pré-requis
 
-1. **Installer Git** : Si vous n'avez pas encore Git installé sur votre machine, commencez par le télécharger et l'installer [ici](https://git-scm.com/).
-2. **Créer un compte GitHub** : Si vous n'avez pas encore de compte GitHub, créez-en un en visitant [github.com](https://github.com/).
+1. **Créer un compte GitHub** : Si vous n'avez pas encore de compte GitHub, créez-en un en visitant [github.com](https://github.com/).
 
 ### Étapes pour se connecter à GitHub et configurer Git
 
