@@ -89,7 +89,7 @@ Le projet est divisé en plusieurs parties :
 
    Ouvrez un terminal et entrez la commande suivante :
    ```bash
-   git clone git@github.com:nom-utilisateur/drawplusplus.git
+   git clone https://github.com/MonsieurNikko/ProjetDrawplusplus.git
    ```
 
    Cette commande téléchargera tout le projet dans un répertoire local.
