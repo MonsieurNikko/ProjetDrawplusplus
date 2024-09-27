@@ -1,4 +1,4 @@
-# draw++ - Un Langage de Dessin Personnalisé
+# draw++ - Un Langage de Dessin Personnaliséw
 
 ## Aperçu du Projet
 
@@ -82,6 +82,9 @@ Le projet est divisé en plusieurs parties :
    Si tout fonctionne, vous verrez un message de succès.
 
 ---
+### Ajout de commentaire pour éviter le dossier `data`
+
+> **Note** : Pour cloner le dépôt sur Ubuntu, évitez de sauvegarder dans le dossier `data`. Utilisez plutôt un autre emplacement, tel que votre dossier personnel (`~/`) ou tout autre dossier spécifique pour vos projets, afin d'éviter des conflits ou des permissions limitées.
 
 ### Étapes pour contribuer au projet
 
