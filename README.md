@@ -166,7 +166,7 @@ Le projet est divisé en plusieurs parties :
 
 Pour compiler le projet avec SDL, utilisez la commande suivante :
 
-```bash
+bash
 gcc -o nomdufichier nomdufichier.c -Isrc/include -Lsrc/lib -lmingw32 -lSDL2main -lSDL2
 
 ./nomdufichier
