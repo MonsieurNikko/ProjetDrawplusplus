@@ -162,7 +162,7 @@ Le projet est divisé en plusieurs parties :
 | `git pull origin main` | Récupère les dernières modifications de la branche principale. |
 
 
-## Compilation
+### Compilation
 
 Pour compiler le projet avec SDL, utilisez la commande suivante :
 
