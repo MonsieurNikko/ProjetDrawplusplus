@@ -169,7 +169,8 @@ Pour compiler le projet avec SDL, utilisez la commande suivante :
 ```bash
 gcc -o nomdufichier nomdufichier.c -Isrc/include -Lsrc/lib -lmingw32 -lSDL2main -lSDL2
 
-./nomdufichier```
+./nomdufichier
+```
 
 ### Conseils 
 
