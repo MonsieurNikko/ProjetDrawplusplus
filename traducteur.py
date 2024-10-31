@@ -48,13 +48,15 @@ def translate_command(command_line):
 
 # Lecture du fichier custom et traduction
 def translate_custom_file_to_c(input_filename):
+    translated_lines = []
     try:
         with open(input_filename, 'r') as file:
-            translated_lines = [translate_command(line.strip()) for line in file]
-        return "\n".join(translated_lines)
+            for line in file:
+                translated_line = translate_command(line.strip())
+                translated_lines.append(translated_line)
     except Exception as e:
         print(f"Erreur lors de la lecture de {input_filename}: {e}")
-        return ""
+    return "\n".join(translated_lines)
 
 
 
