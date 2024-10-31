@@ -161,6 +161,16 @@ Le projet est divisé en plusieurs parties :
 | `git push origin nom-branche` | Envoie vos modifications vers GitHub. |
 | `git pull origin main` | Récupère les dernières modifications de la branche principale. |
 
+
+## Compilation
+
+Pour compiler le projet avec SDL, utilisez la commande suivante :
+
+```bash
+gcc -o nomdufichier nomdufichier.c -Isrc/include -Lsrc/lib -lmingw32 -lSDL2main -lSDL2
+
+./nomdufichier
+
 ### Conseils 
 
 - **Faites des commits régulièrement** : Il est conseillé de faire des commits fréquents avec des messages clairs.
