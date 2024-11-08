@@ -1,6 +1,7 @@
 import re
 import subprocess
 import os
+import sys
 
 subprocess.run([
     "gcc",
@@ -83,11 +84,17 @@ def replace_code_in_c_file(c_filename, translated_code):
         print(f"Erreur lors de la mise à jour de {c_filename}: {e}")
 
 
-
+# Récuperation de l'adresse depuis l'IDE
+if len(sys.argv) > 1 :
+    adresse=sys.argv[1]
+    print(adresse)
+else : 
+    print("echec")
 
 # Exécution du processus
-input_filename = "d:\\projets\\drawpp\\instruction.txt"  # Utilisez le chemin absolu
-c_filename = "d:\\projets\\drawpp\\sdltest.c"  # Utilisez le chemin absolu
+#input_filename = "d:\\projets\\drawpp\\instruction.txt"  # Utilisez le chemin absolu
+input_filename = adresse
+c_filename = "h:/Documents/Travail/Python/Projet/sdltest.c"  # Utilisez le chemin absolu
 
 # Traduire les commandes et mettre à jour le fichier C
 translated_code = translate_custom_file_to_c(input_filename)
