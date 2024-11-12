@@ -94,7 +94,7 @@ else :
 # Exécution du processus
 #input_filename = "d:\\projets\\drawpp\\instruction.txt"  # Utilisez le chemin absolu
 input_filename = adresse
-c_filename = "h:/Documents/Travail/Python/Projet/sdltest.c"  # Utilisez le chemin absolu
+c_filename = "h:/Documents/Travail/Python/Projet/sdltest.c"  # chemin perso (Thomas P)
 
 # Traduire les commandes et mettre à jour le fichier C
 translated_code = translate_custom_file_to_c(input_filename)
