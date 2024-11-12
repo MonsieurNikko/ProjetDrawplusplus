@@ -26,6 +26,8 @@ def save_file():
         save_as_file()
     except PermissionError:
         save_as_file()
+    except IsADirectoryError:
+        save_as_file()
 
 # Fonction pour "Sauvegarder sous" (création d'un nouveau fichier)
 def save_as_file():
