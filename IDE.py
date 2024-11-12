@@ -41,7 +41,7 @@ def save_as_file():
 
 def traduction():
     save_file()
-    subprocess.run(["python","traducteur.py",classic_file_path])
+    subprocess.run(["python3","traducteur.py",classic_file_path])
 
 # Création de l'adresse par défaut 
 global classic_file_path
