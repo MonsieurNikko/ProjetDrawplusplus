@@ -141,6 +141,18 @@ void drawPolygon(SDL_Renderer* renderer, int centerX, int centerY, int radius, i
     drawLine(renderer, prevX, prevY, startX, startY, thickness, delay);
 }
 
+// Fonction pour dessiner un cercle plein animé (optimisé)
+void drawFilledCircle(SDL_Renderer* renderer, int centerX, int centerY, int radius, int delay) {
+    SDL_SetRenderDrawColor(renderer, 255, 255, 255, 255); // Couleur blanche
+    for (int y = -radius; y <= radius; y++) {
+        int width = (int)sqrt(radius * radius - y * y); // Largeur de la ligne à cette hauteur
+        for (int x = -width; x <= width; x++) {
+            animation(renderer, centerX + x, centerY + y, delay);
+        }
+    }
+}
+
+
 //---------------------------------------------------------------------------------------------
 
 int main(int argc, char *argv[]) {
@@ -172,7 +184,6 @@ int main(int argc, char *argv[]) {
 
     // Affichage des dessins ------------------------------------------------------------------
 
-    // Dessiner les formes animées
     // drawSquare(renderer, 100, 100, 200, 5, 1);
     // SDL_Delay(500);
     // drawRectangle(renderer, 50, 50, 200, 100, 5, 1);
@@ -187,10 +198,9 @@ int main(int argc, char *argv[]) {
     // SDL_Delay(500);
     // drawTrapezium(renderer,100 , 300, 150, 400, 100, 5, 1);
     // SDL_Delay(500);
-    drawPolygon(renderer, 320, 240, 100, 8, 5, 1); // Octogone 
-
-
-
+    //drawPolygon(renderer, 320, 240, 100, 8, 5, 1); // Octogone
+    // SDL_Delay(500);
+    drawFilledCircle(renderer, 320, 240, 100, 0.1);
 
     SDL_RenderPresent(renderer); // Présente le rendu final
 
