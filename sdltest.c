@@ -200,7 +200,7 @@ int main(int argc, char *argv[]) {
     // SDL_Delay(500);
     //drawPolygon(renderer, 320, 240, 100, 8, 5, 1); // Octogone
     // SDL_Delay(500);
-    drawFilledCircle(renderer, 320, 240, 100, 0.1);
+    drawFilledCircle(renderer, 320, 240, 100, 0.1); 
 
     SDL_RenderPresent(renderer); // Présente le rendu final
 
