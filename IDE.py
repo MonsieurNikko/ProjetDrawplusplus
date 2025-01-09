@@ -162,26 +162,26 @@ button_color = "#313bd1"  # Couleur par défaut pour les autres boutons
 execute_button_color = "#4CAF50"  # Couleur verte pour le bouton "Exécuter"
 
 # Boutons d’action directement dans la fenêtre principale
-open_button = tk.CTkButton(root, text="Ouvrir un fichier", command=open_file, width=15, fg_color=button_color)
+open_button = tk.CTkButton(root, text="Ouvrir un fichier", command=open_file, width=15, fg_color=button_color,corner_radius=0 )
 open_button.pack(side="left", padx=20, pady=20)
 
-save_button = tk.CTkButton(root, text="Sauvegarder", command=save_file, width=15, fg_color=button_color)
+save_button = tk.CTkButton(root, text="Sauvegarder", command=save_file, width=15, fg_color=button_color,corner_radius=0 )
 save_button.pack(side="left", padx=20)
 
-save_as_button = tk.CTkButton(root, text="Sauvegarder sous", command=save_as_file, width=15, fg_color=button_color)
+save_as_button = tk.CTkButton(root, text="Sauvegarder sous", command=save_as_file, width=15, fg_color=button_color,corner_radius=0 )
 save_as_button.pack(side="left", padx=20)
 
 # Bouton "Exécuter" en vert
-execute_button = tk.CTkButton(root, text="Exécuter", command=execute_code, width=15, fg_color=execute_button_color)
+execute_button = tk.CTkButton(root, text="Exécuter", command=execute_code, width=15, fg_color=execute_button_color,corner_radius=0 )
 execute_button.pack(side="left", padx=20)
 
-leave_button = tk.CTkButton(root, text="Quitter", command=root.quit, width=15, fg_color=button_color)
+leave_button = tk.CTkButton(root, text="Quitter", command=root.quit, width=15, fg_color=button_color,corner_radius=0 )
 leave_button.pack(side="left", padx=20)
 
 # Centrer les boutons sous l'éditeur
 leave_button.pack(side="left", padx=20)
 
-clear_button = tk.CTkButton(root, text="Clear", command=clear_output, width=15, fg_color="#FF6347")  # Bouton rouge clair
+clear_button = tk.CTkButton(root, text="Clear", command=clear_output, width=15, fg_color="#FF6347",corner_radius=0 )  # Bouton rouge clair
 clear_button.pack(side="left", padx=20)
 
 # Lancement de l'interface graphique
