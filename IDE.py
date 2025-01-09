@@ -102,6 +102,9 @@ def execute_code():
         output_text.insert(tk.END, f"Erreur lors de l'exécution : {e}\n")
         output_text.yview(tk.END)  # Faire défiler automatiquement
 
+def clear_output():
+    output_text.delete(1.0, tk.END)  # Supprime tout le contenu de la zone d'affichage
+
 # Création de la fenêtre principale
 root = tk.CTk()
 root.title("IDE DRAW++")
@@ -177,6 +180,9 @@ leave_button.pack(side="left", padx=20)
 
 # Centrer les boutons sous l'éditeur
 leave_button.pack(side="left", padx=20)
+
+clear_button = tk.CTkButton(root, text="Clear", command=clear_output, width=15, fg_color="#FF6347")  # Bouton rouge clair
+clear_button.pack(side="left", padx=20)
 
 # Lancement de l'interface graphique
 root.mainloop()
