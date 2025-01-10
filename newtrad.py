@@ -11,8 +11,6 @@ def install_and_import(package):
         print(f"La bibliothèque '{package}' n'est pas installée. Installation en cours...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", package])
         print(f"La bibliothèque '{package}' a été installée avec succès.")
-    else:
-        print(f"La bibliothèque '{package}' est déjà installée.")
 
 # Vérifier et installer la bibliothèque 'ply' si nécessaire
 install_and_import('ply')
@@ -238,26 +236,23 @@ def p_expression(p):
                   | expression PLUS expression
                   | expression MINUS expression
                   | expression TIMES expression
-                  | expression DIVIDE expression'''
-
+                  | expression DIVIDE expression
+                  | LPAREN expression RPAREN'''
     if len(p) == 2:  # Valeur simple ou identifiant
         if isinstance(p[1], (int, float)):  # NUMBFLOAT ou NUMBINT
             p[0] = {'type': 'literal', 'value': p[1]}
         elif isinstance(p[1], str):  # Identifiant
-            try:
-                variable = find_variable(p[1])  # Vérifie si la variable existe
-                p[0] = {'type': 'identifier', 'name': p[1]}
-            except NameError as e:
-                print(f"[ERREUR] {e}")  # Message d'erreur si la variable n'existe pas
-                raise
-    elif len(p) == 4:  # Opération binaire
-        # Créez une représentation de l'opération
-        p[0] = {
-            'type': 'binary_operation',
-            'operator': p[2],
-            'left': p[1],
-            'right': p[3]
-        }
+            p[0] = {'type': 'identifier', 'name': p[1]}
+    elif len(p) == 4:  # Opération binaire ou parenthèses
+        if p[1] == '(':
+            p[0] = p[2]
+        else:
+            p[0] = {
+                'type': 'binary_operation',
+                'operator': p[2],
+                'left': p[1],
+                'right': p[3]
+            }
 
 
 def p_if(p):
@@ -701,16 +696,12 @@ if __name__ == "__main__":
 
             # Analyse syntaxique
             lexer.lineno = 1
-            parsed_code = parser.parse(drawpp_code)
+            parsed_code = parser.parse(drawpp_code, lexer=lexer, debug=True)
 
             # Vérification explicite de la position
             if lexer.lexpos < len(lexer.lexdata):
                 print(f"[DEBUG] Données non consommées après analyse : Position actuelle : {lexer.lexpos}/{len(lexer.lexdata)}")
             else:
-                print("[DEBUG] Analyse terminée sans données résiduelles.")
-                print("Code analysé (formaté) :")
-                print(json.dumps(parsed_code, indent=4))
-
                 traduite = translate_to_c(parsed_code)
 
                 delete_file_if_exists(new_file)  # Étape 1 : Supprimer newtemp.c
