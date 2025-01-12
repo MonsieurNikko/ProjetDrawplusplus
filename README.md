@@ -180,7 +180,7 @@ gcc -o nomdufichier nomdufichier.c -Isrc/include -Lsrc/lib -lmingw32 -lSDL2main 
 
 ## Équipe
 
-- **Membres de l'équipe** : Duc Duy HUYNH, Thomas NGUYEN, [Nom 3], [Nom 4], [Nom 5]
+- **Membres de l'équipe** : Duc Duy HUYNH, Thomas NGUYEN, Thomas PISANESCHI, Owen PAIMBA-SAIL, Axel COTTRANT, Maëlys PICAULT
 
 
 
