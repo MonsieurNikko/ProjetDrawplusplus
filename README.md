@@ -1,4 +1,4 @@
-# draw++ - Un Langage de Dessin Personnaliséw
+# draw++ - Un Langage de Dessin Personnalisé
 
 ## Aperçu du Projet
 
